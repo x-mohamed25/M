@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MBM</title>
+
+  <link rel="stylesheet" href="MBM1.css" />
+</head>
+
+<body>
+  <div class="crud">
+    <div class="head">
+      <img src="logo-transparent.png" alt="MBM Logo" class="logo" />
+    </div>
+
+    <div class="input">
+      <input type="text" placeholder="Title" id="title" />
+      <div class="price">
+        <input onkeyup="gettottle()" type="number" placeholder="PRICE" id="price" />
+        <input onkeyup="gettottle()" type="number" placeholder="Taxes" id="taxes" />
+        <input onkeyup="gettottle()" type="number" placeholder="ADS" id="ads" />
+        <input onkeyup="gettottle()" type="number" placeholder="DISCOUNT" id="discount" />
+        <small id="total"></small>
+      </div>
+      <input type="number" placeholder="COUNT" id="count" />
+      <input type="text" placeholder="CATEGORY" id="category" />
+      <button id="submet">CREATE</button>
+    </div>
+
+    <div class="output">
+      <div class="search">
+        <input onkeyup="searchData(this.value)" type="text" placeholder="Search..." id="search" name="search" />
+        <div class="button-group">
+          <button onclick="setSearchMood('title')" id="btn1">Search By Title</button>
+          <button onclick="setSearchMood('category')" id="bt2">Search By Category</button>
+        </div>
+      </div>
+
+      <div id="deletall"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Taxes</th>
+            <th>Ads</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!-- Table rows will be rendered dynamically -->
+        </tbody>
+      </table>
+
+      <div id="totalSum" style="margin-top: 15px; font-weight: bold; font-size: 1.1em;"></div>
+      <h2 id="salary"></h2>
+    </div>
+  </div>
+
+
+
+  <script src="MBM1.js"></script>
+</body>
+</html>
