@@ -29,10 +29,13 @@ body {
     height: 400px;
     max-width: 100%;
     height: auto;
-
 }
 
-input {
+.input {
+    margin-bottom: 20px;
+}
+
+.input input {
     cursor: pointer;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -40,21 +43,30 @@ input {
     border: none;
     outline: none;
     background: linear-gradient(to bottom, rgb(59, 93, 125), rgb(40, 70, 105));
+    margin: 6px 0;
     border-radius: 20px;
     padding: 6px 10px;
     color: aliceblue;
     font-size: 16px;
-
-}
-
-input:focus {
-    background: linear-gradient(to bottom, rgb(33, 63, 92), rgb(20, 50, 70));
-    transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
+.input input:focus {
+    background: linear-gradient(to bottom, rgb(33, 63, 92), rgb(20, 50, 70));
+    transform: scale(1.05);
+}
+
+.price {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+}
+
 .price input {
-    width: 20%;
+    flex: 1;
+    min-width: 60px;
 }
 
 #total {
@@ -115,9 +127,8 @@ button:hover {
 
 .table-container {
     overflow-x: auto;
-
     -webkit-overflow-scrolling: touch;
-
+    margin-top: 10px;
 }
 
 table {
@@ -130,7 +141,6 @@ table {
     overflow: hidden;
     font-size: 14px;
     min-width: 300px;
-
 }
 
 th {
@@ -241,7 +251,6 @@ tr:hover td {
         height: 42px;
     }
 }
-
 
 @media (max-width: 480px) {
     table {
