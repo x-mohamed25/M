@@ -110,11 +110,36 @@ button:hover {
 }
 
 .search {
+    border-radius: 30px;
+    padding: 10px 15px; 
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
+
+
+.search input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: text;
+}
+
+.search input[type="text"]:focus {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(20, 40, 60, 0.3);
+}
+
 
 .button-group {
     display: flex;
