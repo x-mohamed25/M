@@ -14,6 +14,9 @@ let salary = document.getElementById("salary");
 let mood = "create";
 let tmp;
 
+// استرجاع البيانات من localStorage أو بدء بمصفوفة فارغة
+let localProducts = JSON.parse(localStorage.getItem("products")) || [];
+
 function gettottle() {
     if (price.value !== "") {
         let result =
@@ -37,7 +40,9 @@ function clearFields() {
     category.value = "";
 }
 
-let localProducts = [];
+function saveToLocalStorage() {
+    localStorage.setItem("products", JSON.stringify(localProducts));
+}
 
 submit.onclick = function () {
     let now = new Date().toLocaleString();
@@ -75,6 +80,7 @@ submit.onclick = function () {
         tmp = null;
     }
 
+    saveToLocalStorage();  // حفظ البيانات في localStorage
     clearFields();
     displayProducts();
 };
@@ -106,6 +112,7 @@ function displayProducts() {
 
 function deleteProduct(index) {
     localProducts.splice(index, 1);
+    saveToLocalStorage();  // تحديث localStorage بعد الحذف
     displayProducts();
 }
 
@@ -154,3 +161,8 @@ search.addEventListener("input", () => {
     tbody.innerHTML = table;
     salary.textContent = `Total Sales: ${totalSales.toFixed(2)}`;
 });
+
+// عرض المنتجات المحفوظة عند تحميل الصفحة
+window.onload = function () {
+    displayProducts();
+};
